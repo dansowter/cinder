@@ -1,4 +1,4 @@
-Cinder.Router.map ()->
+Cinder.Router.map ->
   @resource 'todos', path: '/', ->
     @route 'active'
     @route 'completed'

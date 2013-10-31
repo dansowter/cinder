@@ -15,12 +15,17 @@ Cinder.TodosController = Ember.ArrayController.extend
     completed.invoke('deleteRecord')
     @get('store').commit()
 
-  remaining: ->
-    @filterProperty('isCompleted', false).get('length').property('@each.isCompleted')
+  remaining: (->
+    @filterProperty('isCompleted', false).get('length')
+  ).property('@each.isCompleted')
 
   remainingFormatted: (->
     remaining = @get('remaining')
-    plural = (remaining is 1 ? 'item' : 'items')
+    console.log remaining
+    plural = if remaining is 1
+      'item'
+    else
+      'items'
     '<strong>%@</strong> %@ left'.fmt(remaining, plural)
   ).property('remaining')
 

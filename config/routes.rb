@@ -1,4 +1,6 @@
 Cinder::Application.routes.draw do
+  resources :todos
+
   class FormatTest
     attr_accessor :mime_type
 
