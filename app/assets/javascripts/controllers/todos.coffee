@@ -21,7 +21,6 @@ Cinder.TodosController = Ember.ArrayController.extend
 
   remainingFormatted: (->
     remaining = @get('remaining')
-    console.log remaining
     plural = if remaining is 1
       'item'
     else

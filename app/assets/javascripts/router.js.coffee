@@ -3,6 +3,9 @@ Cinder.Router.map ->
     @route 'active'
     @route 'completed'
 
+Cinder.Router.reopen
+  location: 'history'
+
 Cinder.TodosRoute = Ember.Route.extend
   model: ->
     Cinder.Todo.find()
