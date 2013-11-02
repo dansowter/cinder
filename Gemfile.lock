@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails-api/rails-api.git
+  revision: dc41dca6c61c27f96d2df10550c48d33c58ab3c1
+  specs:
+    rails-api (0.1.0)
+      actionpack (>= 3.2.11)
+      railties (>= 3.2.11)
+      tzinfo (~> 0.3.31)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -246,6 +255,7 @@ DEPENDENCIES
   puma
   quiet_assets
   rails (= 4.0.0)
+  rails-api!
   rb-fsevent (~> 0.9.1)
   rspec-rails
   sass-rails (~> 4.0.0)

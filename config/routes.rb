@@ -1,5 +1,5 @@
 Cinder::Application.routes.draw do
-  resources :todos
+  resources :todos, except: [:new, :edit]
 
   class FormatTest
     attr_accessor :mime_type

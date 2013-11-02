@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :todo do
-    title "MyString"
+    title { Faker::Lorem.sentence(2) }
     is_completed false
   end
 end

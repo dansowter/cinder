@@ -21,9 +21,10 @@ RSpec.configure do |config|
   config.order = "random"
   config.filter_run focus: true
   config.run_all_when_everything_filtered = true
+  config.expect_with(:rspec) { |c| c.syntax = :expect }
 
   Capybara.register_driver :poltergeist_debug do |app|
-    Capybara::Poltergeist::Driver.new(app, inspector: true, js_errors: true, timeout: 10)
+    Capybara::Poltergeist::Driver.new(app, js_errors: true, timeout: 10)
   end
 
   Capybara.register_driver :poltergeist_tolerant do |app|
