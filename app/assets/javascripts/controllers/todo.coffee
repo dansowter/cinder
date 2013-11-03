@@ -1,10 +1,11 @@
 Cinder.TodoController = Ember.ObjectController.extend
   isEditing: false
 
-  editTodo: ->
-    this.set('isEditing', true)
+  actions:
+    editTodo: ->
+      this.set('isEditing', true)
 
-  removeTodo: ->
-    todo = this.get('model')
-    todo.deleteRecord()
-    todo.get('store').commit()
+    removeTodo: ->
+      todo = this.get('model')
+      todo.deleteRecord()
+      todo.get('store').commit()

@@ -1,19 +1,20 @@
 Cinder.TodosController = Ember.ArrayController.extend
-  createTodo: ->
-    title = @get('newTitle')
-    return if !title.trim()
+  actions:
+    createTodo: ->
+      title = @get('newTitle')
+      return if !title.trim()
 
-    Cinder.Todo.createRecord
-      title: title
-      isCompleted: false
+      Cinder.Todo.createRecord
+        title: title
+        isCompleted: false
 
-    @set('newTitle', '')
-    @get('store').commit()
+      @set('newTitle', '')
+      @get('store').commit()
 
-  clearCompleted: ->
-    completed = @filterProperty('isCompleted', true)
-    completed.invoke('deleteRecord')
-    @get('store').commit()
+    clearCompleted: ->
+      completed = @filterProperty('isCompleted', true)
+      completed.invoke('deleteRecord')
+      @get('store').commit()
 
   remaining: (->
     @filterProperty('isCompleted', false).get('length')

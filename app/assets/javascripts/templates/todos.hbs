@@ -10,7 +10,7 @@
         {{#each filteredTodos itemController="todo"}}
           <li {{bindAttr class="isCompleted:completed isEditing:editing"}}>
             {{#if isEditing}}
-              {{view Todos.EditTodoView todoBinding="this"}}
+              {{view Cinder.EditTodoView todoBinding="this"}}
             {{else}}
               {{view Ember.Checkbox checkedBinding="isCompleted" class="toggle"}}
               <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>

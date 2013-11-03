@@ -7,13 +7,13 @@ Cinder.EditTodoView = Ember.TextField.extend
     value = @get('value')
 
     if (Ember.isEmpty(value))
-      @get('controller').removeTodo()
+      @get('targetObject').removeTodo()
 
   focusOut: ->
-    @set('controller.isEditing', false)
+    @set('targetObject.isEditing', false)
 
   insertNewline: ->
-    @set('controller.isEditing', false)
+    @set('targetObject.isEditing', false)
 
   didInsertElement: ->
     @$().focus()
